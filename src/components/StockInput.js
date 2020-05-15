@@ -1,23 +1,22 @@
-import React, { Component } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import React from "react";
 
-class StockInput extends Component {
-  render() {
-    return (
-      <div>
-        <form>
-          <TextField
-            id="outlined-textarea"
-            label="$"
-            placeholder="Enter the stock symbol"
-            multiline
-            variant="outlined"
-          />
-        </form>
-      </div>
-    );
-  }
-}
+const StockInput = (props) => {
+  let input;
+  const handleSearch = () => {
+    props.onSearch(input.value);
+  };
+  return (
+    <div className="col-sm searchbar">
+      <label data-reactid="search">$</label>
+      <input
+        className="form-control searchinput"
+        data-reactid="search"
+        ref={(n) => (input = n)}
+        type="text"
+        onKeyUp={handleSearch}
+      />
+    </div>
+  );
+};
 
 export default StockInput;
