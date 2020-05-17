@@ -9,7 +9,6 @@ class StockWidget extends Component {
   render() {
     return (
       <div>
-        <SearchStock />
         <TweetsPreview />
       </div>
     );
