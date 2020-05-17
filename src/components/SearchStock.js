@@ -1,6 +1,6 @@
 import React from "react";
 
-const StockInput = (props) => {
+const SearchStock = (props) => {
   let input;
   const handleSearch = () => {
     props.onSearch(input.value);
@@ -19,4 +19,4 @@ const StockInput = (props) => {
   );
 };
 
-export default StockInput;
+export default SearchStock;

@@ -2,8 +2,9 @@ import React from "react";
 import "./App.css";
 
 import StockWidget from "./components/StockWidget";
+//import TweetsPreview from "./components/TweetsPreview";
 
-const messages = [
+/*const messages = [
   {
     id: 49,
     body: "short $JOY",
@@ -89,7 +90,7 @@ const messages = [
     ],
   },
 ];
-
+*/
 function App() {
   return (
     <div className="App">

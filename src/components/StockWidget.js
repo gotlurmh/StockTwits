@@ -1,5 +1,6 @@
-import StockInput from "./StockInput";
+import SearchStock from "./SearchStock";
 import React, { Component } from "react";
+import TweetsPreview from "./TweetsPreview";
 
 class StockWidget extends Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class StockWidget extends Component {
   render() {
     return (
       <div>
-        <StockInput />
+        <SearchStock />
+        <TweetsPreview />
       </div>
     );
   }
