@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import TweetData from "../data/messages.json";
-import SearchStock from "./SearchStock";
+import TweetsDisplay from "./TweetsDisplay";
 class TweetsPreview extends Component {
   render() {
+    const { tweets } = this.props;
+
     return (
       <div>
-        {TweetData.map((item, index) => {
-          return <SearchStock searchTweet={item} key={index} />;
+        {tweets.map((tweet, index) => {
+          return <TweetsDisplay tweet={tweet} key={index} />;
         })}
       </div>
     );
