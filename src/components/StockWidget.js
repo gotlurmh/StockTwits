@@ -21,9 +21,11 @@ class StockWidget extends Component {
           this.setState({ tweets: tweetsToDisplay });
           this.setState({ counter: counts });
         } else {
-          this.setState({ error: true });
+          this.setState({ tweets: [], counter: [], error: true });
         }
         console.log(this.state);
+      } else {
+        this.setState({ tweets: [], counter: [], error: false });
       }
     });
   };
