@@ -33,7 +33,6 @@ class StockWidget extends Component {
   render() {
     return (
       <div>
-        <div>search</div>
         <SearchStock handleStockSymbols={this.getStockSymbols} />
         {this.state.error && <p>Invalid symbol was used</p>}
         <TweetsPreview

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TweetsDisplay from "./TweetsDisplay";
+import Grid from "@material-ui/core/Grid";
 class TweetsPreview extends Component {
   render() {
     const { tweets, counter } = this.props;
@@ -15,9 +16,13 @@ class TweetsPreview extends Component {
             );
           })}
         </div>
-        {tweets.map((tweet, index) => {
-          return <TweetsDisplay tweet={tweet} key={index} />;
-        })}
+        <Grid container>
+          {/* <Grid item> */}
+          {tweets.map((tweet, index) => {
+            return <TweetsDisplay tweet={tweet} key={index} />;
+          })}
+          {/* </Grid> */}
+        </Grid>
       </div>
     );
   }

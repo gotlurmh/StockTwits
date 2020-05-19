@@ -1,100 +1,22 @@
 import React from "react";
 import "./App.css";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 
 import StockWidget from "./components/StockWidget";
-//import TweetsPreview from "./components/TweetsPreview";
 
-/*const messages = [
-  {
-    id: 49,
-    body: "short $JOY",
-    created_at: "2012-10-08 21:41:38 UTC",
-    user: {
-      id: 2,
-      username: "ppearlman",
-      name: "Phil Pearlman",
-      avatar_url:
-        "http://avatars.stocktwits.com/images/default_avatar_thumb.jpg",
-      avatar_url_ssl:
-        "https://s3.amazonaws.com/st-avatars/images/default_avatar_thumb.jpg",
-      identity: "User",
-      classification: ["suggested"],
-    },
-    source: {
-      id: 1,
-      title: "Stocktwits",
-      url: "http://stocktwits.com",
-    },
-    symbols: [
-      {
-        id: 17,
-        symbol: "JOY",
-        title: "Joy Global, Inc.",
-      },
-    ],
-  },
-  {
-    id: 50,
-    body: "an idea about a $JOY",
-    created_at: "2012-10-08 21:41:38 UTC",
-    user: {
-      id: 2,
-      username: "ppearlman",
-      name: "Phil Pearlman",
-      avatar_url:
-        "http://avatars.stocktwits.com/images/default_avatar_thumb.jpg",
-      avatar_url_ssl:
-        "https://s3.amazonaws.com/st-avatars/images/default_avatar_thumb.jpg",
-      identity: "User",
-      classification: ["suggested"],
-    },
-    source: {
-      id: 1,
-      title: "Stocktwits",
-      url: "http://stocktwits.com",
-    },
-    symbols: [
-      {
-        id: 17,
-        symbol: "JOY",
-        title: "Joy Global, Inc.",
-      },
-    ],
-  },
-  {
-    id: 51,
-    body: "more ideas about $JOY",
-    created_at: "2012-10-08 21:41:38 UTC",
-    user: {
-      id: 2,
-      username: "ppearlman",
-      name: "Phil Pearlman",
-      avatar_url:
-        "http://avatars.stocktwits.com/images/default_avatar_thumb.jpg",
-      avatar_url_ssl:
-        "https://s3.amazonaws.com/st-avatars/images/default_avatar_thumb.jpg",
-      identity: "User",
-      classification: ["suggested"],
-    },
-    source: {
-      id: 1,
-      title: "Stocktwits",
-      url: "http://stocktwits.com",
-    },
-    symbols: [
-      {
-        id: 17,
-        symbol: "JOY",
-        title: "Joy Global, Inc.",
-      },
-    ],
-  },
-];
-*/
 function App() {
   return (
     <div className="App">
-      <p>Please enter the stock symbols to get related tweets</p>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">StockTwits Widget</Typography>
+        </Toolbar>
+      </AppBar>
+      <Typography variant="h5">
+        <p>Enter the stock symbol(s) to get related tweets</p>
+      </Typography>
       <StockWidget />
     </div>
   );
