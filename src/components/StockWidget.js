@@ -3,11 +3,12 @@ import SearchStock from "./SearchStock";
 import TweetsPreview from "./TweetsPreview";
 
 class StockWidget extends Component {
-  state = { tweets: [], error: false };
+  state = { tweets: [], counter: [], error: false };
 
   getStockSymbols = (stockSymbols) => {
     const url = "https://api.stocktwits.com/api/2/streams/symbol/";
     const tweetsToDisplay = [];
+    const counts = [];
     this.setState({ error: false });
     stockSymbols.map(async (symbol) => {
       if (symbol) {
@@ -16,10 +17,13 @@ class StockWidget extends Component {
         if (data.response.status !== 404) {
           tweetsToDisplay.push(...data.messages);
           this.setState({ tweets: tweetsToDisplay });
+          counts.push({ count: data.messages.length, symbol });
+          this.setState({ tweets: tweetsToDisplay });
+          this.setState({ counter: counts });
         } else {
           this.setState({ error: true });
         }
-        console.log(data);
+        console.log(this.state);
       }
     });
   };
@@ -30,7 +34,10 @@ class StockWidget extends Component {
         <div>search</div>
         <SearchStock handleStockSymbols={this.getStockSymbols} />
         {this.state.error && <p>Invalid symbol was used</p>}
-        <TweetsPreview tweets={this.state.tweets} />
+        <TweetsPreview
+          tweets={this.state.tweets}
+          counter={this.state.counter}
+        />
       </div>
     );
   }
