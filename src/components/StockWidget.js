@@ -15,15 +15,17 @@ class StockWidget extends Component {
   };
 
   getStockSymbols = (stockSymbols) => {
-    const url = "https://stock-twit.herokuapp.com/";
+    // const url = "https://stock-twit.herokuapp.com/";
+    const url = "http://localhost:4000/";
     const tweetsToDisplay = [];
     const counts = [];
     this.setState({ error: false });
     stockSymbols.map(async (symbol) => {
       if (symbol) {
         const response = await fetch(`${url}${symbol}`);
-        const data = await response.json();
-        if (data.response.status !== 404) {
+        console.log(response);
+        if (response.status !== 404) {
+          const data = await response.json();
           tweetsToDisplay.push(...data.messages);
           this.setState({ tweets: tweetsToDisplay });
           counts.push({ count: data.messages.length, symbol });
