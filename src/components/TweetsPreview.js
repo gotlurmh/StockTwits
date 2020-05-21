@@ -14,7 +14,7 @@ class TweetsPreview extends Component {
           {counter.map((counts, index) => {
             return (
               <Typography key={index} variant="subtitle2" align="justify">
-                Tweet count for {counts.symbol} is {counts.count}
+                Tweets displayed for {counts.symbol} is {counts.count}
               </Typography>
             );
           })}
