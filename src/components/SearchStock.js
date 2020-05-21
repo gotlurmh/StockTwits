@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
-//import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
 
@@ -22,25 +21,20 @@ const SearchStock = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        {/* Enter Stock Symbol(s): */}
         <TextField
           id="outlined-helperText"
           label="$"
-          //defaultValue="Enter Stock symbol(s)"
           helperText="Multipe symbols must be ',' separated"
           variant="outlined"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyUp={(e) => (!e.target.value ? handleSubmit(e) : null)}
           placeholder="Enter Stock symbol(s)"
         />
       </label>
       <IconButton color="secondary" aria-label="add an alarm" type="submit">
         <SearchIcon fontSize="large" />
       </IconButton>
-      {/* <Button type="submit" variant="outlined" color="primary">
-        Default
-      </Button> */}
-      {/* <input type="submit" value="Search" /> */}
     </form>
   );
 };

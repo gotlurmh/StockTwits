@@ -1,31 +1,52 @@
-import React, { Component } from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Grid from "@material-ui/core/Grid";
-import "typeface-roboto";
 import { Typography } from "@material-ui/core";
-import Paper from "@material-ui/core/Paper";
+import Avatar from "@material-ui/core/Avatar";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import ListItemText from "@material-ui/core/ListItemText";
+import React, { Component } from "react";
+import "typeface-roboto";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core";
+import { blue } from "@material-ui/core/colors";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: blue[500],
+    },
+  },
+});
 
 class TweetsDisplay extends Component {
   render() {
     const { tweet } = this.props;
     return (
-      <div>
-        <Paper variant="outlined" square elevation={3} />
-        <Typography>
-          <Grid
-            container
-            justify="flex-start"
-            direction="row"
-            alignItems="left"
-          >
-            <Grid item>
-              <Avatar alt={tweet.user.name} src={tweet.user.avatar_url} />
-              <Typography variant="subtitle2">{tweet.user.username}</Typography>
-              <Typography variant="body1">{tweet.body}</Typography>
-            </Grid>
-          </Grid>
-        </Typography>
-      </div>
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt={tweet.user.name} src={tweet.user.avatar_url} />
+        </ListItemAvatar>
+        <ListItemText
+          primary={
+            <React.Fragment>
+              <MuiThemeProvider theme={theme}>
+                <Typography
+                  component="span"
+                  variant="subtitle2"
+                  color="primary"
+                >
+                  {tweet.user.username}
+                </Typography>
+              </MuiThemeProvider>
+            </React.Fragment>
+          }
+          secondary={
+            <React.Fragment>
+              <Typography component="span" variant="body2" color="textPrimary">
+                {tweet.body}
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
     );
   }
 }

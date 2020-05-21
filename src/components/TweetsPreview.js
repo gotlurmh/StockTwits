@@ -1,7 +1,8 @@
+import { List } from "@material-ui/core";
 import React, { Component } from "react";
 import TweetsDisplay from "./TweetsDisplay";
-import Grid from "@material-ui/core/Grid";
-// import { GridList } from "@material-ui/core";
+import Divider from "@material-ui/core/Divider";
+import Typography from "@material-ui/core/Typography";
 
 class TweetsPreview extends Component {
   render() {
@@ -12,35 +13,22 @@ class TweetsPreview extends Component {
         <div>
           {counter.map((counts, index) => {
             return (
-              <p key={index}>
-                {counts.symbol}:{counts.count}
-              </p>
+              <Typography key={index} variant="subtitle2" align="justify">
+                Tweet count for {counts.symbol} is {counts.count}
+              </Typography>
             );
           })}
         </div>
-
-        <Grid
-          // id="containerG"
-          container
-          direction="column"
-          justify="flex-start"
-          alignItems="left"
-        >
-          <Grid
-            // className="itemG"
-            item
-            xs
-            maxWidth="sm"
-            direction="column"
-            zeroMinWidth
-            wrap="nowrap"
-            spacing={10}
-          >
-            {tweets.map((tweet, index) => {
-              return <TweetsDisplay tweet={tweet} key={index} />;
-            })}
-          </Grid>
-        </Grid>
+        <List>
+          {tweets.map((tweet, index) => {
+            return (
+              <React.Fragment key={index}>
+                <TweetsDisplay tweet={tweet} />
+                <Divider variant="inset" component="li" />
+              </React.Fragment>
+            );
+          })}
+        </List>
       </div>
     );
   }

@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import SearchStock from "./SearchStock";
 import TweetsPreview from "./TweetsPreview";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
 
 class StockWidget extends Component {
-  state = { tweets: [], counter: [], error: false };
+  state = {
+    tweets: [],
+    counter: [],
+    error: false,
+    invalidSymbol: [],
+  };
 
   getStockSymbols = (stockSymbols) => {
     const url = "https://api.stocktwits.com/api/2/streams/symbol/";
@@ -21,25 +30,44 @@ class StockWidget extends Component {
           this.setState({ tweets: tweetsToDisplay });
           this.setState({ counter: counts });
         } else {
-          this.setState({ tweets: [], counter: [], error: true });
+          const invalidSymbols = new Set([...this.state.invalidSymbol, symbol]);
+          this.setState({
+            tweets: [],
+            counter: [],
+            error: true,
+            invalidSymbol: Array.from(invalidSymbols),
+          });
         }
         console.log(this.state);
       } else {
-        this.setState({ tweets: [], counter: [], error: false });
+        this.setState({
+          tweets: [],
+          counter: [],
+          error: false,
+          invalidSymbol: [],
+        });
       }
     });
   };
 
   render() {
     return (
-      <div>
+      <Container maxWidth="md">
         <SearchStock handleStockSymbols={this.getStockSymbols} />
-        {this.state.error && <p>Invalid symbol was used</p>}
+        {this.state.error && (
+          <Card>
+            <CardContent>
+              <Typography variant="subtitle2">
+                {this.state.invalidSymbol.join(",")} is invalid
+              </Typography>
+            </CardContent>
+          </Card>
+        )}
         <TweetsPreview
           tweets={this.state.tweets}
           counter={this.state.counter}
         />
-      </div>
+      </Container>
     );
   }
 }
