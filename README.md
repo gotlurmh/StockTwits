@@ -1,4 +1,4 @@
-https://gotlurmh.github.io/StockTwits/
+Find the deployed project here: https://gotlurmh.github.io/StockTwits/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
