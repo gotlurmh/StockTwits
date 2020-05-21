@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/StockTwits/static/css/main.37f774d8.chunk.css",
-    "main.js": "/StockTwits/static/js/main.024c52d6.chunk.js",
-    "main.js.map": "/StockTwits/static/js/main.024c52d6.chunk.js.map",
+    "main.js": "/StockTwits/static/js/main.37e2cc2f.chunk.js",
+    "main.js.map": "/StockTwits/static/js/main.37e2cc2f.chunk.js.map",
     "runtime-main.js": "/StockTwits/static/js/runtime-main.2935e05f.js",
     "runtime-main.js.map": "/StockTwits/static/js/runtime-main.2935e05f.js.map",
     "static/css/2.a8808a03.chunk.css": "/StockTwits/static/css/2.a8808a03.chunk.css",
     "static/js/2.a5349155.chunk.js": "/StockTwits/static/js/2.a5349155.chunk.js",
     "static/js/2.a5349155.chunk.js.map": "/StockTwits/static/js/2.a5349155.chunk.js.map",
     "index.html": "/StockTwits/index.html",
-    "precache-manifest.bb6acc8c8fd408161d02d1dfb22cf533.js": "/StockTwits/precache-manifest.bb6acc8c8fd408161d02d1dfb22cf533.js",
+    "precache-manifest.669e3ef7a53102b24045191dcdf4ec64.js": "/StockTwits/precache-manifest.669e3ef7a53102b24045191dcdf4ec64.js",
     "service-worker.js": "/StockTwits/service-worker.js",
     "static/css/2.a8808a03.chunk.css.map": "/StockTwits/static/css/2.a8808a03.chunk.css.map",
     "static/css/main.37f774d8.chunk.css.map": "/StockTwits/static/css/main.37f774d8.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.a8808a03.chunk.css",
     "static/js/2.a5349155.chunk.js",
     "static/css/main.37f774d8.chunk.css",
-    "static/js/main.024c52d6.chunk.js"
+    "static/js/main.37e2cc2f.chunk.js"
   ]
 }
