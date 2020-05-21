@@ -35,7 +35,7 @@ const SearchStock = (props) => {
         />
       </label>
       <IconButton color="secondary" aria-label="add an alarm" type="submit">
-        <SearchIcon />
+        <SearchIcon fontSize="large" />
       </IconButton>
       {/* <Button type="submit" variant="outlined" color="primary">
         Default
