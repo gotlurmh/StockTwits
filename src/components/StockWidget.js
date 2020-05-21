@@ -38,7 +38,6 @@ class StockWidget extends Component {
             invalidSymbol: Array.from(invalidSymbols),
           });
         }
-        console.log(this.state);
       } else {
         this.setState({
           tweets: [],
