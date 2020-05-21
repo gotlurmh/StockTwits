@@ -15,8 +15,8 @@ class StockWidget extends Component {
   };
 
   getStockSymbols = (stockSymbols) => {
-    // const url = "https://stock-twit.herokuapp.com/";
-    const url = "http://localhost:4000/";
+    const url = "https://stock-twit.herokuapp.com/";
+    // const url = "http://localhost:4000/";
     const tweetsToDisplay = [];
     const counts = [];
     this.setState({ error: false });
