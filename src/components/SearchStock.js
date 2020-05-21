@@ -15,7 +15,7 @@ const SearchStock = (props) => {
       .map((symbol) => symbol.trim().toUpperCase());
     searchSymbols = Array.from(new Set(searchSymbols));
     props.handleStockSymbols(searchSymbols);
-    interval = setInterval(props.handleStockSymbols, 5000, searchSymbols);
+    interval = setInterval(props.handleStockSymbols, 45000, searchSymbols);
   };
 
   return (
